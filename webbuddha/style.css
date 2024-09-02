@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
+}
+/* สำหรับหน้าจอขนาดใหญ่ */
+body {
+    font-size: 1rem;
+}
+
+/* สำหรับหน้าจอขนาดกลาง */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem;
+    }
+}
+
+/* สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 480px) {
+    body {
+        font-size: 0.8rem;
+    }
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgba(255, 255, 255, 0.9); /* พื้นหลังโปร่งใสเล็กน้อย */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    transition: background 0.3s ease; /* เพิ่มการเปลี่ยนแปลงพื้นหลัง */
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #000000;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.8); /* พื้นหลังสีขาว */
+    padding: 10px 20px; /* เพิ่ม padding ให้ดูเป็นปุ่ม */
+    border-radius: 5px; /* ทำให้มุมโค้งมน */
+    transition: background-color 0.3s ease; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+}
+
+.logo:hover {
+    background-color: rgba(255, 255, 255, 1); /* พื้นหลังสีขาวเมื่อโฮเวอร์ */
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    gap: 40px;
+    background: transparent; /* เริ่มต้นเป็นโปร่งใส */
+    transition: background 0.3s ease;
+    padding: 10px 0; /* กำหนด padding ให้กับ navbar */
+}
+
+.navbar.scrolled {
+    padding: 10px 20px; /* เพิ่ม padding ให้ดูสวยงามเมื่อเลื่อน */
+    border-radius: 5px; /* ทำให้มุมโค้งมน */
+    background: rgba(244, 235, 166, 0.86); /* พื้นหลังสีขาวเมื่อเลื่อนลง */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเมื่อเลื่อนลง */
+}
+
+.navbar a { 
+    position: relative;
+    font-size: 18px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #000000;
+    transition: width 0.5s ease; /* เพิ่มการเปลี่ยนแปลงขนาดเส้น */
+}
+
+.navbar a:hover::before {
+    width: 100%; /* เส้นใต้ขยายเต็มเมื่อโฮเวอร์ */
+}
+
+.main-header {
+    text-align: center;
+    padding: 100px 20px 40px; /* เพิ่ม padding ด้านบนเพื่อเว้นระยะ */
+}
+
+.main-header h1 {
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 15px; /* ทำให้มุมรูปภาพโค้งมน */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+    border: 5px solid #ffffff; /* เพิ่มขอบสีขาว */
+    transition: transform 0.3s ease; /* เพิ่มการเคลื่อนไหว */
+}
+
+.main-image:hover {
+    transform: scale(1.05); /* ขยายรูปภาพเล็กน้อยเมื่อวางเมาส์ */
+}
+
+.content-section {
+    max-width: 800px; /* กำหนดความกว้างสูงสุดของเนื้อหา */
+    margin: 0 auto; /* จัดให้อยู่กึ่งกลางของหน้า */
+    padding: 20px; /* ระยะห่างภายในคอนเทนเนอร์ */
+    background-color: rgba(250, 246, 180, 0.8); /* สีพื้นหลัง */
+    scroll-margin-top: 100px; /* เว้นระยะสำหรับ scroll */
+}
+
+p {
+    line-height: 1.6; /* ระยะห่างระหว่างบรรทัด */
+    margin-bottom: 16px; /* ระยะห่างระหว่างย่อหน้า */
+    text-align: justify; /* จัดข้อความให้เต็มบรรทัดทั้งสองด้าน */
+    color: #272727; /* สีของข้อความ */
+}
+.content-section h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.content-section p {
+    margin-bottom: 20px;
+}
+
+
+.content-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Style สำหรับ Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style สำหรับ Dropdown Button */
+.dropdown-button {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    padding: 10px;
+}
+
+.dropdown-button:hover {
+    color: #555;
+}
+
+.intro-section {
+    text-align: center;
+    margin-top: 20px;
+    
+}
+.intro-section p {
+    max-width: 1000px; /* กำหนดความกว้างสูงสุดของเนื้อหา */
+    margin: 0 auto; /* จัดให้อยู่กึ่งกลางของหน้า */
+    padding: 40px; /* ระยะห่างภายในคอนเทนเนอร์ */
+    scroll-margin-top: 100px; /* เว้นระยะสำหรับ scroll */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background-color: rgba(254, 254, 254, 0.844);
+}
+.key-dates ul{
+    max-width: 1000px; /* กำหนดความกว้างสูงสุดของเนื้อหา */
+    margin: 0 auto; /* จัดให้อยู่กึ่งกลางของหน้า */
+    padding: 40px; /* ระยะห่างภายในคอนเทนเนอร์ */
+    scroll-margin-top: 100px; /* เว้นระยะสำหรับ scroll */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background-color: rgba(254, 254, 254, 0.844);
+}
+.key-dates h2 {
+    max-width: 800px; /* กำหนดความกว้างสูงสุดของเนื้อหา */
+    margin: 0 auto; /* จัดให้อยู่กึ่งกลางของหน้า */
+    padding: 20px; /* ระยะห่างภายในคอนเทนเนอร์ */
+    scroll-margin-top: 100px; /* เว้นระยะสำหรับ scroll */
+    text-align: center;
+}
+.gallery {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* ระยะห่างระหว่างรูปภาพ */
+    color: rgb(0, 0, 0);
+}
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* ระยะห่างระหว่างรูปภาพ */
+}
+
+.img-thumbnail {
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
